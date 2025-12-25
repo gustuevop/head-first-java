@@ -8,7 +8,7 @@ class Party {
     buildInvite();
   }
 
-  public void buildInvite() {
+  public static void buildInvite() {
     Frame f = new Frame();
     Label l = new Label("Party at Tim's");
     Button b = new Button("You bet");
