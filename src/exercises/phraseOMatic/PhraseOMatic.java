@@ -1,4 +1,4 @@
-package exercises;
+package exercises.phraseOMatic;
 
 public class PhraseOMatic {
 
