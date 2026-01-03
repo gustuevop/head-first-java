@@ -17,7 +17,7 @@ public class PhraseOMaticRefactor {
 			"architecture", "perspective", "design",
 			"orientation"};
 	
-	String[] recentPhrases = new String[3];
+	static String[] recentWords = new String[3];
 	
 	String phraseGenerator(String[] a, String[] b, String[] c) {
 		
@@ -30,7 +30,22 @@ public class PhraseOMaticRefactor {
 		int rand2 = randomGenerator.nextInt(wordListTwoLenght);
 		int rand3 = randomGenerator.nextInt(wordListThreeLenght);
 		
-		return wordListOne[rand1] + " " + wordListTwo[rand2] + " " + wordListThree[rand3];
+		recentWords[0] = wordListOne[rand1];
+		recentWords[1] = wordListOne[rand1];
+		recentWords[2] = wordListOne[rand1];
+		
+		return  wordListOne[rand1] + " " + wordListTwo[rand2] + " " + wordListThree[rand3];
+	}
+	
+	boolean repetitionChecker(String[] recentWords, String generatedPhrase) {
+		String[] generatedWords = generatedPhrase.split(" ");
+		for (int i = 0; i < 3; i++) {
+			if (generatedWords[i].contains(recentWords[i])) {
+				System.out.println("\nRepetition encontered! Repetitive word: " + generatedWords[i]);
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	
@@ -38,6 +53,7 @@ public class PhraseOMaticRefactor {
 				
 		PhraseOMaticRefactor phraseOMatic = new PhraseOMaticRefactor();
 		java.util.Scanner scan = new java.util.Scanner(System.in);
+		
 		String builtPhrase = "";
 		String userChoice = "";
 		int i = 0;
@@ -45,21 +61,22 @@ public class PhraseOMaticRefactor {
 		
 		while (run) {
 			builtPhrase = phraseOMatic.phraseGenerator(wordListOne, wordListTwo, wordListThree);
-			System.out.println("We need a " + builtPhrase);
-			phraseOMatic.recentPhrases[i] = builtPhrase;
-			i++;
 			
-			System.out.println("Would you like to run the program again? (Y/N)");
+			if (phraseOMatic.repetitionChecker(recentWords, builtPhrase)) {
+				System.out.println("\nGenerating again!");
+				builtPhrase = phraseOMatic.phraseGenerator(wordListOne, wordListTwo, wordListThree);
+			}
+			
+			
+			
+			System.out.println("\nGenerated Phrase: We need a " + builtPhrase);
+			System.out.println("\nWould you like to run the program again? (Y/N)");
 			userChoice = scan.nextLine();
 			
 			if (userChoice.equals("Y")) {
 				run = true;
 			} else {
 				run = false;
-			}
-						
-			if (i == 3) {
-				i = 0;
 			}
 		}
 		scan.close();		
