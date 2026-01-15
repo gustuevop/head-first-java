@@ -52,6 +52,9 @@
 17. METHOD -> ISTA
 20. JVM
 
+# OBS
+As I have the digital book, I printed this exercise to do it physically
+
 
 
 
