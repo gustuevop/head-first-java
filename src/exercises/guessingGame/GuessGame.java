@@ -1,16 +1,20 @@
 package exercises.guessingGame;
 
+import java.util.Scanner;
+
 public class GuessGame {
 	Player p1;
 	Player p2;
 	Player p3;
 	boolean keepRunning = true;
 	int randomNumber;
+	Scanner sc;
 
 	public void start() {
 		p1 = new Player();
 		p2 = new Player();
 		p3 = new Player();
+		sc = new Scanner(System.in);
 		int maxResult = 10;
 
 		System.out.println("Welcome to the ultimate Guess Game!\n");
@@ -21,9 +25,9 @@ public class GuessGame {
 			System.out.println("The target number is: " + randomNumber);
 			System.out.println();
 			
-			p1.guess(maxResult);
-			p2.guess(maxResult);
-			p3.guess(maxResult);
+			p1.guess(maxResult, sc);
+			p2.guess(maxResult, sc);
+			p3.guess(maxResult, sc);
 			
 			System.out.println("All players done guessing! Let's check if we have a winner...\n");
 			
@@ -52,7 +56,7 @@ public class GuessGame {
 			}
 			
 		}
-		
+		sc.close();
 	}
 	
 	 void checkResult(Player p) {
@@ -62,7 +66,7 @@ public class GuessGame {
 	}
 
 	public int generateRandomNumber(int maxResult) {
-		return (int) Math.random() * maxResult;
+		return (int) (Math.random() * maxResult);
 	}
 
 }

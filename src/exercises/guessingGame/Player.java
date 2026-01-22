@@ -7,11 +7,9 @@ public class Player {
 	int guess;
 	boolean isRight;
 	
-	public int guess(int max) {
-		Scanner sc = new Scanner(System.in);
+	public int guess(int max, Scanner sc) {
 		System.out.println("Guess a number up to " + (max - 1));
 		guess = sc.nextInt();
-		sc.close();
 		return guess;
 	}
 
