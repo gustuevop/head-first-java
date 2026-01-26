@@ -56,7 +56,6 @@ public class PhraseOMaticRefactor {
 		
 		String builtPhrase = "";
 		String userChoice = "";
-		int i = 0;
 		boolean run = true;
 		
 		while (run) {
