@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package src.exercises.codeMagnets;
+=======
+package exercises.codeMagnets;
+>>>>>>> ac6cbec992d5c804131b1be86e10fd5497b49bac
 
 public class TestArrays {
 	public static void main(String[] args) {

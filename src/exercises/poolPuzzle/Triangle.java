@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package src.exercises.poolPuzzle;
+=======
+package exercises.poolPuzzle;
+>>>>>>> ac6cbec992d5c804131b1be86e10fd5497b49bac
 
 class Triangle {
 	double area;

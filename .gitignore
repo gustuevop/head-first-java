@@ -1,4 +1,5 @@
 # Eclipse
+<<<<<<< HEAD
 
 .classpath
 
@@ -33,3 +34,12 @@ out/
 .DS_Store
 
 Thumbs.db
+=======
+.project
+.classpath
+.settings/
+
+# Java
+bin/
+*.class
+>>>>>>> ac6cbec992d5c804131b1be86e10fd5497b49bac
